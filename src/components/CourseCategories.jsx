@@ -73,7 +73,6 @@ const CourseCategories = () => {
           </span>
         </h2>
 
-     
         <div className="flex justify-center gap-4 mb-10">
           {tabs.map((tab) => (
             <button
@@ -92,19 +91,16 @@ const CourseCategories = () => {
           ))}
         </div>
 
-       
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredCourses.map((course) => (
             <div
               key={course.id}
-              className="group relative flex flex-col sm:flex-row items-stretch 
-  gap-8 md:gap-10 p-10 md:p-12 
+              className="group relative flex flex-col lg:flex-row items-stretch 
+  gap-6 md:gap-8 p-5 md:p-8 lg:p-10 
   bg-white rounded-2xl shadow-md overflow-hidden 
   transition-all duration-500 
-  hover:-translate-y-1 hover:shadow-xl
-  min-h-[320px] md:min-h-[360px]"
+  hover:-translate-y-1 hover:shadow-xl"
             >
-            
               <div
                 className="absolute inset-0 bg-blue-600 
     scale-x-0 group-hover:scale-x-100 
@@ -115,8 +111,8 @@ const CourseCategories = () => {
               <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-10 w-full">
                 {/* IMAGE */}
                 <div
-                  className="w-full sm:w-56 md:w-64 lg:w-72 h-48 sm:h-56 md:h-auto
-      flex-shrink-0 overflow-hidden rounded-xl"
+                  className="w-full lg:w-1/2 h-48 sm:h-56 md:h-64 lg:h-auto
+  flex-shrink-0 overflow-hidden rounded-xl"
                 >
                   <img
                     src={course.image}
@@ -126,7 +122,7 @@ const CourseCategories = () => {
                 </div>
 
                 {/* TEXT */}
-                <div className="flex-1 flex flex-col justify-between space-y-3">
+              <div className="flex-1 flex flex-col justify-between space-y-3 py-2">
                   <p className="text-blue-600 font-semibold text-lg md:text-xl transition-colors duration-500 group-hover:text-white">
                     ₹{course.price}
                   </p>
