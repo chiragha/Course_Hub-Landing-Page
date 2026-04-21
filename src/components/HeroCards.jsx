@@ -1,18 +1,11 @@
-// HeroCards.jsx
 import { motion } from "framer-motion";
-
-const data = [
-  { title: "25K+", desc: "Active Students" },
-  { title: "120+", desc: "Courses Available" },
-  { title: "50+", desc: "Expert Instructors" },
-  { title: "4.8", desc: "Average Rating" },
-];
+import CountUp from "./CountUp";
 
 const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.25, 
+      staggerChildren: 0.25,
     },
   },
 };
@@ -29,10 +22,16 @@ const item = {
   },
 };
 
+const data = [
+  { value: 25, suffix: "K+", desc: "Active Students" },
+  { value: 120, suffix: "+", desc: "Courses Available" },
+  { value: 50, suffix: "+", desc: "Expert Instructors" },
+  { value: 4.8, suffix: "", desc: "Average Rating" },
+];
+
 const HeroCards = () => {
   return (
     <div className="relative z-20 max-w-8xl mx-auto px-4">
-      {/* OVERLAY EFFECT */}
       <div className="-mt-20 md:-mt-20">
         <motion.div
           variants={container}
@@ -47,10 +46,16 @@ const HeroCards = () => {
               variants={item}
               className="bg-white rounded-xl shadow-lg p-6 text-center"
             >
-              <h2 className="text-3xl font-bold text-blue-600">
-                {itemData.title}
+              <h2 className="text-4xl font-bold text-[#032042]">
+                <CountUp
+                  end={itemData.value}
+                  suffix={itemData.suffix}
+                />
               </h2>
-              <p className="text-black text-2xl mt-2">{itemData.desc}</p>
+
+              <p className="text-[#032042] font-semibold text-2xl mt-2">
+                {itemData.desc}
+              </p>
             </motion.div>
           ))}
         </motion.div>

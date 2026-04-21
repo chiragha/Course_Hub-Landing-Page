@@ -2,13 +2,9 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
-        
-        {/* LEFT SIDE (MEDIA GRID) */}
-        <div className="grid grid-cols-2 gap-4">
-          
-          {/* Small Image */}
+    <section id="about" className="w-full overflow-x-hidden py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
+        <div className="w-full lg:w-1/2 grid grid-cols-2 grid-rows-2 gap-4 h-[500px]">
           <div className="rounded-xl overflow-hidden">
             <img
               src="/side.webp"
@@ -17,7 +13,6 @@ const AboutSection = () => {
             />
           </div>
 
-          {/* BIG IMAGE (span 2 rows) */}
           <div className="row-span-2 rounded-xl overflow-hidden">
             <img
               src="/big.avif"
@@ -26,8 +21,7 @@ const AboutSection = () => {
             />
           </div>
 
-          {/* Small Video / GIF */}
-          <div className="rounded-xl overflow-hidden relative">
+          <div className="rounded-xl overflow-hidden">
             <video
               src="/file.mp4"
               autoPlay
@@ -36,51 +30,55 @@ const AboutSection = () => {
               className="w-full h-full object-cover"
             />
           </div>
-
-
         </div>
 
-        {/* RIGHT SIDE (CONTENT) */}
-        <div>
+        <div className="w-full lg:w-1/2">
+          <h4 className="text-blue-600 font-medium mb-2 text-2xl whitespace-nowrap">
+            Welcome to SkillSync
+          </h4>
+
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-bold mb-6"
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-6xl text-[#032042] font-semibold mb-8"
           >
-            Empowering Minds, <br /> Shaping Futures
+            Empowering Minds <br /> Shaping Futures
           </motion.h2>
 
-          {/* Mission */}
           <div className="flex gap-4 items-start mb-6">
-            <div className="bg-blue-900 text-white p-3 rounded-lg">
+            <div className="bg-[#032042] text-2xl text-white p-3 rounded-lg">
               🚀
             </div>
             <div>
-              <h3 className="font-semibold text-lg">Our Mission</h3>
+              <h3 className="font-semibold text-[#032042] text-2xl">
+                Our Mission
+              </h3>
               <p className="text-gray-600 text-sm mt-1">
                 Helping students gain real-world skills through modern learning.
               </p>
             </div>
           </div>
 
-          {/* Divider Line */}
-          <div className="ml-6 h-10 border-l-2 border-blue-300"></div>
+          <div className="ml-6 mt-2 h-10 border-l-2 border-[#3d4a58]"></div>
 
           {/* Vision */}
           <div className="flex gap-4 items-start mt-6">
-            <div className="bg-blue-900 text-white p-3 rounded-lg">
+            <div className="bg-[#032042] text-2xl text-white p-3 rounded-lg">
               👁️
             </div>
             <div>
-              <h3 className="font-semibold text-lg">Our Vision</h3>
+              <h3 className="font-semibold text-[#032042] text-2xl">
+                Our Vision
+              </h3>
               <p className="text-gray-600 text-sm mt-1">
                 Building a global platform where learning never stops.
               </p>
             </div>
           </div>
+          <div className="ml-6 mt-2 h-10 border-l-2 border-[#3d4a58]"></div>
 
-          {/* BUTTON */}
-          <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg transition-all duration-300 hover:bg-white hover:text-blue-600 border border-blue-600">
+          <button className="mt-8 cursor-pointer px-6 py-3 bg-blue-600 text-white rounded-lg transition-all duration-300  hover:bg-[#032042] border text-white">
             Enroll Now
           </button>
         </div>

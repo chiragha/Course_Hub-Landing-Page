@@ -1,17 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&display=swap');
+
 @import "tailwindcss";
 
+/* GLOBAL STYLES */
 html {
   scroll-behavior: smooth;
+   overflow-x: hidden;
 }
+
+body {
+  font-family: "Poppins", sans-serif;
+   overflow-x: hidden;
+}
+
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 15s linear infinite;
 }
