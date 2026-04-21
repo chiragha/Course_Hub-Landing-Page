@@ -59,22 +59,27 @@ const tabs = [
 const CourseCategories = () => {
   const [activeTab, setActiveTab] = useState("all");
 
- const filteredCourses = (() => {
+
+const filteredCourses = (() => {
+  let data =
+    activeTab === "all"
+      ? coursesData
+      : coursesData.filter((course) => course.type === activeTab);
+
   if (activeTab === "top") {
-    return [...coursesData].sort((a, b) => b.rating - a.rating);
+    return data.sort((a, b) => b.rating - a.rating);
   }
 
   if (activeTab === "selling") {
-    return [...coursesData].sort((a, b) => b.students - a.students);
+    return data.sort((a, b) => b.students - a.students);
   }
 
   if (activeTab === "reviews") {
-    return [...coursesData].sort((a, b) => b.reviews - a.reviews);
+    return data.sort((a, b) => b.reviews - a.reviews);
   }
 
-  return coursesData;
+  return data;
 })();
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl lg:max-w-[1400px] mx-auto px-4 md:px-6">
