@@ -49,7 +49,7 @@ A modern and responsive Course Hub Landing Page built using React and Tailwind C
 To run this project locally:
 
 `bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/chiragha/SkillSync-Landing-Page
+cd course_hub
 npm install
 npm run dev
