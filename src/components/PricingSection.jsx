@@ -54,7 +54,7 @@ export default function PricingSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl md:text-6xl  font-bold mb-6">
               Affordable plans for every business
             </h2>
 
@@ -87,8 +87,8 @@ export default function PricingSection() {
                 whileHover={{ scale: 1.05 }}
                 className={`rounded-2xl p-6 shadow-lg text-white relative ${
                   plan.highlight
-                    ? "bg-blue-900 scale-105 sm:scale-110 py-10"
-                    : "bg-blue-800"
+                    ? "bg-[#032042]  scale-105 sm:scale-110 py-10"
+                    : "bg-[#032042] "
                 }`}
               >
                 
@@ -113,7 +113,7 @@ export default function PricingSection() {
                   ))}
                 </ul>
 
-                <button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg text-sm">
+                <button className="bg-blue-500 cursor-pointer hover:bg-white hover:text-blue-500 px-4 py-2 rounded-lg text-sm">
                   Contact Now
                 </button>
               </motion.div>

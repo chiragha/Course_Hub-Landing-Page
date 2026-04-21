@@ -49,7 +49,7 @@ export default function Footer() {
     
         <div className="grid md:grid-cols-4 gap-8 text-sm">
           <div>
-            <h4 className="font-semibold mb-4">CourseHub</h4>
+            <h4 className="font-semibold mb-4">SkillSync</h4>
             <p className="text-gray-400">
               Learn new skills online with top educators and industry experts.
             </p>
@@ -87,7 +87,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2 text-gray-400">
               <li>📞 +123 456 7890</li>
-              <li>✉️ info@coursehub.com</li>
+              <li>✉️ info@SkillSync.com</li>
               <li>📍 abc, United States</li>
             </ul>
           </div>
@@ -95,7 +95,7 @@ export default function Footer() {
 
 
         <div className="text-center text-gray-500 text-xs mt-12 pb-6">
-          Copyright © 2025 CourseHub | Designed by Chiragha
+          Copyright © 2025 SkillSync | Designed by Chiragha
         </div>
       </div>
     </footer>

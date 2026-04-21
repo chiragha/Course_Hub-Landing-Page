@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
+import { PiStudentBold } from "react-icons/pi";
+import { MdLanguage } from "react-icons/md";
 
 const coursesData = [
   {
@@ -57,16 +59,26 @@ const tabs = [
 const CourseCategories = () => {
   const [activeTab, setActiveTab] = useState("all");
 
-  const filteredCourses =
-    activeTab === "all"
-      ? coursesData
-      : coursesData.filter((course) => course.type === activeTab);
+ const filteredCourses = (() => {
+  if (activeTab === "top") {
+    return [...coursesData].sort((a, b) => b.rating - a.rating);
+  }
+
+  if (activeTab === "selling") {
+    return [...coursesData].sort((a, b) => b.students - a.students);
+  }
+
+  if (activeTab === "reviews") {
+    return [...coursesData].sort((a, b) => b.reviews - a.reviews);
+  }
+
+  return coursesData;
+})();
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl lg:max-w-[1400px] mx-auto px-4 md:px-6">
-        {/* 🔹 Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-6">
           Find the Perfect Match to Your{" "}
           <span className="bg-blue-600 text-white px-2 py-1 rounded">
             Interest
@@ -77,9 +89,7 @@ const CourseCategories = () => {
           {tabs.map((tab) => (
             <button
               key={tab.value}
-              onClick={() =>
-                setActiveTab((prev) => (prev === tab.value ? "all" : tab.value))
-              }
+            onClick={() => setActiveTab(tab.value)}
               className={`px-5 py-2 rounded-full border transition-all duration-300 ${
                 activeTab === tab.value
                   ? "bg-blue-600 text-white"
@@ -107,9 +117,7 @@ const CourseCategories = () => {
     origin-left transition-transform duration-700 ease-in-out z-0"
               ></div>
 
-              {/* CONTENT */}
               <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-10 w-full">
-                {/* IMAGE */}
                 <div
                   className="w-full lg:w-1/2 h-48 sm:h-56 md:h-64 lg:h-auto
   flex-shrink-0 overflow-hidden rounded-xl"
@@ -121,18 +129,20 @@ const CourseCategories = () => {
                   />
                 </div>
 
-                {/* TEXT */}
-              <div className="flex-1 flex flex-col justify-between space-y-3 py-2">
-                  <p className="text-blue-600 font-semibold text-lg md:text-xl transition-colors duration-500 group-hover:text-white">
+                <div className="flex-1 flex flex-col justify-between space-y-3 py-2">
+                  <p className="text-[#032042] font-semibold text-lg md:text-xl transition-colors duration-500 group-hover:text-white">
                     ₹{course.price}
                   </p>
 
-                  <h3 className="font-bold text-lg md:text-xl leading-snug transition-colors duration-500 group-hover:text-white">
+                  <h3 className="font-bold text-[#041938] text-lg md:text-xl leading-snug transition-colors duration-500 group-hover:text-white">
                     {course.title}
                   </h3>
 
                   <div className="flex items-center gap-2 text-sm md:text-base">
-                    <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                     <span className="transition-colors duration-500 group-hover:text-white">
                       {course.rating}
                     </span>
@@ -141,9 +151,20 @@ const CourseCategories = () => {
                     </span>
                   </div>
 
-                  <div className="flex flex-wrap gap-4 text-xs md:text-sm text-gray-500 transition-colors duration-500 group-hover:text-white">
-                    <span>👥 {course.students}</span>
-                    <span>🌐 {course.language}</span>
+                  <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm text-gray-500 group-hover:text-white">
+                    <div className="flex items-center gap-2">
+                      <span className="bg-[#081b42] text-white h-8 w-8 rounded-full flex items-center justify-center">
+                        <PiStudentBold className="text-lg" />
+                      </span>
+                      <span>{course.students}</span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="bg-[#081b42] text-white h-8 w-8 rounded-full flex items-center justify-center">
+                        <MdLanguage className="text-lg" />
+                      </span>
+                      <span>{course.language}</span>
+                    </div>
                   </div>
                 </div>
               </div>
