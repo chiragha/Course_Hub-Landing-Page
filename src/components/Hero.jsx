@@ -34,7 +34,7 @@ const Hero = () => {
   const current = slides[index];
 
   return (
-    <section className="relative h-[90vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
+    <section id="home" className="relative h-[90vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
       {/* Background Slider */}
       <AnimatePresence mode="wait">
         <motion.div
