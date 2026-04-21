@@ -10,7 +10,7 @@ A modern and responsive Course Hub Landing Page built using React and Tailwind C
 ---
 
 ## 💻 GitHub Repository
-👉 [Add your GitHub repo link here]
+👉 https://github.com/chiragha/SkillSync-Landing-Page
 
 ---
 
